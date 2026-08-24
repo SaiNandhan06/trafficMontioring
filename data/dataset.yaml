@@ -1,0 +1,11 @@
+# YOLOv8 Unified UAV Traffic Dataset Configuration
+path: data/processed
+train: images/train
+val: images/val
+test: images/test
+
+names:
+  0: vehicle
+  1: pedestrian
+  2: cyclist
+  3: traffic_signal

@@ -1,0 +1,98 @@
+{
+  "dataset_name": "VisDrone2019-DET (Unified UAV Traffic Taxonomy)",
+  "generated_timestamp": "2026-08-24T05:19:31Z",
+  "processed_dir": "C:\\Users\\M Sainandhan\\OneDrive\\Documents\\Projects\\trafficMonitoring\\data\\processed",
+  "total_images": 701,
+  "total_labels": 701,
+  "split_counts": {
+    "train": 501,
+    "val": 100,
+    "test": 100
+  },
+  "split_percentages": {
+    "train": 71.5,
+    "val": 14.3,
+    "test": 14.3
+  },
+  "class_distribution_total": {
+    "vehicle": 15785,
+    "pedestrian": 27518,
+    "cyclist": 9054,
+    "traffic_signal": 0
+  },
+  "split_reports": {
+    "train": {
+      "split": "train",
+      "image_dir_exists": true,
+      "label_dir_exists": true,
+      "total_images": 501,
+      "total_labels": 501,
+      "valid_labels": 501,
+      "empty_labels": 0,
+      "invalid_labels": 0,
+      "missing_labels": 0,
+      "orphaned_labels": 0,
+      "unreadable_images": 0,
+      "class_distribution": {
+        "vehicle": 13685,
+        "pedestrian": 19430,
+        "cyclist": 7282,
+        "traffic_signal": 0
+      },
+      "errors": []
+    },
+    "val": {
+      "split": "val",
+      "image_dir_exists": true,
+      "label_dir_exists": true,
+      "total_images": 100,
+      "total_labels": 100,
+      "valid_labels": 100,
+      "empty_labels": 0,
+      "invalid_labels": 0,
+      "missing_labels": 0,
+      "orphaned_labels": 0,
+      "unreadable_images": 0,
+      "class_distribution": {
+        "vehicle": 1172,
+        "pedestrian": 2880,
+        "cyclist": 1377,
+        "traffic_signal": 0
+      },
+      "errors": []
+    },
+    "test": {
+      "split": "test",
+      "image_dir_exists": true,
+      "label_dir_exists": true,
+      "total_images": 100,
+      "total_labels": 100,
+      "valid_labels": 100,
+      "empty_labels": 0,
+      "invalid_labels": 0,
+      "missing_labels": 0,
+      "orphaned_labels": 0,
+      "unreadable_images": 0,
+      "class_distribution": {
+        "vehicle": 928,
+        "pedestrian": 5208,
+        "cyclist": 395,
+        "traffic_signal": 0
+      },
+      "errors": []
+    }
+  },
+  "leakage_analysis": {
+    "sequence_overlap_train_val": [
+      "0000076",
+      "0000165",
+      "0000072"
+    ],
+    "sequence_overlap_train_test": [],
+    "sequence_overlap_val_test": [],
+    "exact_image_overlap_train_val": [],
+    "exact_image_overlap_train_test": [],
+    "leakage_risk_detected": true
+  },
+  "validation_passed": true
+}
