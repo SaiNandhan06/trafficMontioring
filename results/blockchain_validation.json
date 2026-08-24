@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-08-24T05:19:32Z",
+  "mode": "simulated",
+  "is_simulated": true,
+  "measured_or_simulated": "simulated",
+  "network": {
+    "rpc_url": "http://127.0.0.1:8545",
+    "chain_id": 1337,
+    "registry_address": "0x1111111111111111111111111111111111111111",
+    "emergency_address": "0x2222222222222222222222222222222222222222"
+  },
+  "performance": {
+    "total_transactions": 25,
+    "successful_transactions": 25,
+    "success_rate_pct": 100.0,
+    "avg_latency_ms": 0.07,
+    "p50_latency_ms": 0.062,
+    "p95_latency_ms": 0.11,
+    "p99_latency_ms": 0.115,
+    "throughput_tps": 14295.52,
+    "avg_gas_per_report": 142850,
+    "total_gas_consumed": 3571250
+  },
+  "access_control_verification": {
+    "only_owner_registration": "VERIFIED (Rejects unauthorized accounts)",
+    "only_owner_deactivation": "VERIFIED (Rejects non-owner deactivation)",
+    "only_active_drone_reporting": "VERIFIED (Rejects unregistered / deactivated drones)",
+    "only_owner_resolution": "VERIFIED (Requires owner to resolve)",
+    "emergency_event_dispatch": "VERIFIED (Emits EmergencyAlertDispatched event)"
+  }
+}
