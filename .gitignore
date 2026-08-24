@@ -1,0 +1,90 @@
+# ==============================================================================
+# Byte-compiled / optimized / DLL files
+# ==============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# C extensions
+*.obj
+*.o
+*.pyd
+
+# ==============================================================================
+# Virtual Environments
+# ==============================================================================
+venv/
+env/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# ==============================================================================
+# Environment Variables & Secrets
+# ==============================================================================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+security/.vault.enc
+security/certs/*.crt
+security/certs/*.key
+
+# ==============================================================================
+# SQLite & Offline Database Files
+# ==============================================================================
+*.db
+*.sqlite
+*.sqlite3
+edge/offline_queue.db
+
+# ==============================================================================
+# Logs & Process Artifacts
+# ==============================================================================
+logs/
+*.log
+
+# ==============================================================================
+# Testing & Code Coverage Artifacts
+# ==============================================================================
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+test-results.xml
+
+# ==============================================================================
+# Large Datasets & Caches (Automated via KaggleHub)
+# ==============================================================================
+.cache/
+.kaggle/
+kaggle_cache/
+data/raw/
+data/raw_kaggle/
+data/VisDrone/
+data/synthetic/
+data/processed/images/
+data/processed/labels/
+data/processed/labels/*.cache
+data/processed/images/raw_inbound/
+data/processed/labels/raw_inbound/
+
+# ==============================================================================
+# IPFS Local Mock Store & Generated Runs
+# ==============================================================================
+ipfs/mock_store/
+runs/detect/val*
+results/temp_*
+
+# ==============================================================================
+# Temporary Files & OS / IDE Settings
+# ==============================================================================
+tmp/
+temp/
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
