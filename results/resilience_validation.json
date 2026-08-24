@@ -1,0 +1,63 @@
+{
+  "timestamp": "2026-08-24T05:19:40Z",
+  "queue_architecture": {
+    "database_driver": "SQLite 3 (WAL Mode)",
+    "concurrency": "Thread-safe with Lock & PRAGMA timeout=15s",
+    "lifecycle_states": [
+      "PENDING",
+      "RETRYING",
+      "SUCCESS",
+      "DEAD_LETTER"
+    ],
+    "max_retries_default": 5,
+    "exponential_backoff": "2^retry_count * 1.5s"
+  },
+  "scenarios": [
+    {
+      "scenario": "Queue Insert & State Transition",
+      "dependency": "SQLite Queue",
+      "failure": "None",
+      "recovery": "Pushed to queue",
+      "final_state": "PENDING",
+      "pass": true
+    },
+    {
+      "scenario": "Duplicate Incident Prevention",
+      "dependency": "SQLite Queue",
+      "failure": "Replayed identical incident ID",
+      "recovery": "Ignored duplicate push",
+      "final_state": "DEDUPLICATED",
+      "pass": true
+    },
+    {
+      "scenario": "Blockchain & IPFS Replay Recovery",
+      "dependency": "Blockchain / IPFS",
+      "failure": "Simulated offline delay",
+      "recovery": "Replay confirmed on-chain",
+      "final_state": "SUCCESS",
+      "pass": true
+    },
+    {
+      "scenario": "Dead-Letter Max Retry Boundary",
+      "dependency": "Retry Limit",
+      "failure": "3 consecutive failed attempts",
+      "recovery": "Archived in dead-letter state",
+      "final_state": "DEAD_LETTER",
+      "pass": true
+    },
+    {
+      "scenario": "Application Restart Persistence",
+      "dependency": "SQLite WAL Store",
+      "failure": "Abrupt process restart",
+      "recovery": "Re-opened DB and restored state",
+      "final_state": "PRESERVED",
+      "pass": true
+    }
+  ],
+  "summary": {
+    "total_scenarios": 5,
+    "passed_scenarios": 5,
+    "failed_scenarios": 0,
+    "measured_or_simulated": "measured (in-memory & local SQLite store)"
+  }
+}
