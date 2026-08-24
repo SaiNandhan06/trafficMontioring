@@ -1,0 +1,23 @@
+{
+  "pipeline_name": "skyguard_kaggle_real_data_pipeline",
+  "started_at": 1787338858.2694108,
+  "dataset_requested": "kushagrapandya/visdrone-dataset",
+  "stages": {
+    "stage_1_download": {
+      "status": "SUCCESS",
+      "dataset_path": "C:\\Users\\M Sainandhan\\.cache\\kagglehub\\datasets\\kushagrapandya\\visdrone-dataset\\versions\\1",
+      "duration_seconds": 6.01
+    },
+    "stage_2_inference_test": {
+      "status": "SUCCESS",
+      "images_evaluated": 50,
+      "total_detections": 215,
+      "throughput_fps": 8.99,
+      "mean_latency_ms": 111.24,
+      "duration_seconds": 10.95
+    }
+  },
+  "overall_status": "COMPLETED",
+  "completed_at": 1787338875.2422192,
+  "total_pipeline_duration_seconds": 16.97
+}
