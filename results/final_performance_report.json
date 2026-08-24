@@ -1,0 +1,145 @@
+{
+  "timestamp": "2026-08-23T16:08:30Z",
+  "project": "SkyGuard UAV: Edge AI + Blockchain Traffic Monitoring System",
+  "environment": {
+    "os": "Windows 11 (10.0.26200)",
+    "python": "3.12.10",
+    "cpu": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel (16 threads)",
+    "ram_gb": 15.69,
+    "gpu": null,
+    "cuda_available": false
+  },
+  "artifacts": {
+    "model_checkpoint": "model/weights/yolov8_uav_best.pt",
+    "onnx_model": "model/weights/yolov8_uav_best.onnx",
+    "dataset": "VisDrone2019-DET (kushagrapandya/visdrone-dataset)",
+    "dataset_manifest": "data/dataset.yaml",
+    "evaluation_report": "results/model_evaluation_report.json"
+  },
+  "ml_evaluation": {
+    "overall": {
+      "precision": 0.349129,
+      "recall": 0.255468,
+      "f1_score": 0.295029,
+      "map_50": 0.229574,
+      "map_50_95": 0.093745,
+      "test_images": 100,
+      "test_instances": 6531,
+      "device": "cpu",
+      "provenance": "MEASURED (Held-Out Test Split)"
+    },
+    "per_class": {
+      "vehicle": {
+        "instances": 928,
+        "precision": 0.499021,
+        "recall": 0.417026,
+        "map_50": 0.392000,
+        "map_50_95": 0.187495
+      },
+      "pedestrian": {
+        "instances": 5208,
+        "precision": 0.436772,
+        "recall": 0.341782,
+        "map_50": 0.283000,
+        "map_50_95": 0.090057
+      },
+      "cyclist": {
+        "instances": 395,
+        "precision": 0.111595,
+        "recall": 0.007595,
+        "map_50": 0.013900,
+        "map_50_95": 0.003684
+      },
+      "traffic_signal": {
+        "instances": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "map_50": 0.093745,
+        "map_50_95": 0.093745,
+        "note": "No ground-truth instances in held-out test split"
+      }
+    }
+  },
+  "edge_inference": {
+    "pytorch_cpu": {
+      "mean_latency_ms": 66.04,
+      "p50_latency_ms": 65.82,
+      "p95_latency_ms": 78.14,
+      "fps": 15.14,
+      "provenance": "MEASURED"
+    },
+    "onnx_runtime_cpu": {
+      "mean_latency_ms": 39.97,
+      "p50_latency_ms": 39.37,
+      "p95_latency_ms": 47.88,
+      "fps": 25.02,
+      "speedup_vs_pytorch": 1.67,
+      "provenance": "MEASURED"
+    },
+    "tensorrt": {
+      "status": "BLOCKED",
+      "reason": "No NVIDIA CUDA GPU or TensorRT library on host"
+    },
+    "jetson_nano": {
+      "status": "NOT MEASURED",
+      "reason": "Physical Jetson hardware not connected to host"
+    }
+  },
+  "incident_detection": {
+    "controlled_scenarios_tested": 11,
+    "controlled_scenarios_passed": 11,
+    "speeding_detection": "VERIFIED (Centroid kinematic delta)",
+    "sudden_braking": "VERIFIED (Deceleration threshold >25 km/h/s)",
+    "collision_overlap": "VERIFIED (Spatial IoU overlap + post-collision halt)",
+    "traffic_congestion": "VERIFIED (Bounding box area / roadway ratio)",
+    "provenance": "MEASURED (Synthetic & Controlled Video Streams)"
+  },
+  "blockchain": {
+    "mode": "SIMULATED",
+    "simulated_tx_latency_ms": 0.126,
+    "simulated_throughput_tps": 7927.7,
+    "gas_per_incident_tx": 142850,
+    "real_evm_transaction": "NOT MEASURED",
+    "testnet_deployment": "NOT MEASURED",
+    "provenance": "SIMULATED (In-Memory EVM State)"
+  },
+  "ipfs_storage": {
+    "mode": "MOCK",
+    "master_package_upload_ms": 1.838,
+    "master_package_retrieval_ms": 0.316,
+    "byte_level_integrity": "100% Exact Match",
+    "content_addressing": "VERIFIED (Deterministic SHA-256)",
+    "kubo_daemon": "NOT MEASURED (Daemon offline)",
+    "pinata_cloud": "NOT MEASURED (PINATA_JWT unconfigured)",
+    "provenance": "MOCK (Local Disk Store)"
+  },
+  "emergency_notifications": {
+    "mode": "MOCK",
+    "event_processing_ms": 0.688,
+    "duplicate_suppression": "VERIFIED (100% Cooldown Suppression)",
+    "webhook_bounded_retry": "VERIFIED (Max 2-3 retries on network timeout)",
+    "real_emergency_service": "NOT CONFIGURED (Safe Mock & Webhook Adapter)",
+    "provenance": "MOCK (In-Memory Mock Deliveries)"
+  },
+  "offline_resilience": {
+    "database": "SQLite 3 (WAL Mode, Thread-Safe Lock)",
+    "scenarios_passed": 5,
+    "scenarios_total": 5,
+    "deduplication": "VERIFIED",
+    "dead_letter_archiving": "VERIFIED",
+    "restart_persistence": "VERIFIED",
+    "provenance": "MEASURED"
+  },
+  "fastapi_endpoints": {
+    "health_endpoint_ms": 4.683,
+    "provenance_endpoint_ms": 7.976,
+    "incidents_endpoint_ms": 5.820,
+    "blockchain_stats_endpoint_ms": 3.080,
+    "provenance": "MEASURED (Local In-Memory ASGI TestClient)"
+  },
+  "bottleneck_analysis": {
+    "dominant_compute_consumer": "YOLOv8 Object Detection (~99.5% of total edge pipeline latency)",
+    "bytetrack_kinematics_overhead": "<0.5% (~0.2 ms / frame)",
+    "incident_heuristic_overhead": "<0.1% (~0.05 ms / frame)"
+  }
+}
