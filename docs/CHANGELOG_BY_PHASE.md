@@ -6,6 +6,8 @@ This document details the complete 16-phase development and audit history of the
 
 ## Phase 0 — Baseline Audit & System Discovery
 
+* **Commit:** `986fbd8` (`chore: establish project baseline`)
+
 * **Objective:** Perform initial codebase discovery, inventory existing dependencies, audit preliminary architecture, and identify critical security and truthfulness gaps.
 * **Main Changes:**
   * Analyzed legacy scripts and scattered repository structure.
@@ -19,6 +21,8 @@ This document details the complete 16-phase development and audit history of the
 ---
 
 ## Phase 1 — Security & Repository Hygiene
+
+* **Commit:** `5c00181` (`security: harden repository and configuration`)
 
 * **Objective:** Enforce environment variable isolation, secure secrets handling, strict `.gitignore` rules, and production security validations.
 * **Main Changes:**
@@ -35,6 +39,8 @@ This document details the complete 16-phase development and audit history of the
 
 ## Phase 2 — Evaluation Truthfulness & Metrics Audit
 
+* **Commit:** `41e8dd6` (`fix: make model evaluation truthful and traceable`)
+
 * **Objective:** Eliminate hardcoded fake metrics and ensure all evaluation metrics reflect genuine dataset evaluation results.
 * **Main Changes:**
   * Audited `scripts/evaluate_model.py` and `dashboard/app.py` for synthetic numbers.
@@ -48,6 +54,8 @@ This document details the complete 16-phase development and audit history of the
 ---
 
 ## Phase 3 — Dataset Pipeline & Multi-Benchmark Converters
+
+* **Commit:** `a22daed` (`feat: validate and formalize UAV dataset pipeline`)
 
 * **Objective:** Build robust converters for aerial traffic benchmarks (VisDrone, UAVDT, UA-DETRAC) and unified taxonomy mapping.
 * **Main Changes:**
@@ -63,6 +71,8 @@ This document details the complete 16-phase development and audit history of the
 
 ## Phase 4 — KaggleHub Integration & Model Training Pipeline
 
+* **Commit:** `17ff27a` (`feat: train and evaluate UAV traffic detection model`)
+
 * **Objective:** Automate dataset ingestion via KaggleHub and implement YOLOv8 aerial training pipeline.
 * **Main Changes:**
   * Created `src/data_pipeline/kaggle_download.py` with dataset alias resolution.
@@ -76,6 +86,8 @@ This document details the complete 16-phase development and audit history of the
 ---
 
 ## Phase 5 — Incident Detection & Vehicle Kinematics
+
+* **Commit:** `0709f2e` (`feat: validate tracking and traffic incident detection`)
 
 * **Objective:** Implement real-time multi-object tracking (ByteTrack) and rule-based kinematic incident heuristics.
 * **Main Changes:**
@@ -95,6 +107,8 @@ This document details the complete 16-phase development and audit history of the
 
 ## Phase 6 — Edge AI Optimization & ONNX Runtime Validation
 
+* **Commit:** `079579e` (`feat: add ONNX edge inference and runtime benchmarking`)
+
 * **Objective:** Export YOLOv8 to ONNX format and benchmark host CPU inference latency vs ONNX Runtime.
 * **Main Changes:**
   * Developed `model/export.py` exporting YOLOv8 weights to ONNX format (Opset 17).
@@ -108,6 +122,8 @@ This document details the complete 16-phase development and audit history of the
 ---
 
 ## Phase 7 — Solidity Smart Contracts & EVM Blockchain Client
+
+* **Commit:** `348933d` (`feat: validate smart contract and blockchain lifecycle`)
 
 * **Objective:** Design, compile, and validate on-chain smart contracts for tamper-proof traffic incident logging.
 * **Main Changes:**
@@ -124,6 +140,8 @@ This document details the complete 16-phase development and audit history of the
 
 ## Phase 8 — Decentralized IPFS Evidence Packaging & Storage
 
+* **Commit:** `75dde24` (`feat: validate IPFS evidence packaging and CID integrity`)
+
 * **Objective:** Build content-addressed IPFS storage drivers for tamper-evident incident packaging.
 * **Main Changes:**
   * Developed `ipfs/metadata_builder.py` formatting structured JSON incident evidence bundles.
@@ -137,6 +155,8 @@ This document details the complete 16-phase development and audit history of the
 ---
 
 ## Phase 9 — Off-Chain Emergency Notification Listener
+
+* **Commit:** `d9bf680` (`feat: add off-chain emergency notification listener`)
 
 * **Objective:** Connect blockchain smart contract events to external emergency responders.
 * **Main Changes:**
@@ -152,6 +172,8 @@ This document details the complete 16-phase development and audit history of the
 
 ## Phase 10 — Dashboard Truthfulness & Provenance Matrix
 
+* **Commit:** `c58fd9a` (`feat: add truthful dashboard source attribution`)
+
 * **Objective:** Eliminate deceptive UI badges and create a transparent source attribution matrix.
 * **Main Changes:**
   * Built `dashboard/ui_components.py` with dynamic provenance badge generators (`MEASURED`, `SIMULATED`, `MOCKED`, `NOT_MEASURED`).
@@ -165,6 +187,8 @@ This document details the complete 16-phase development and audit history of the
 ---
 
 ## Phase 11 — FastAPI REST API & HMAC Authentication
+
+* **Commit:** `37673f7` (`refactor: align FastAPI and Streamlit service architecture`)
 
 * **Objective:** Build enterprise REST API for drone telemetry ingestion, incident queries, and health checks.
 * **Main Changes:**
@@ -184,6 +208,8 @@ This document details the complete 16-phase development and audit history of the
 
 ## Phase 12 — Centralized Logging & Secret Redaction
 
+* **Commit:** `2f362a3` (`refactor: unify application logging`)
+
 * **Objective:** Build unified, thread-safe logger with structured JSON formatting and automated secret redaction.
 * **Main Changes:**
   * Created `config/logging_config.py` providing `setup_logger()` with rotating file handlers and colored console output.
@@ -197,6 +223,8 @@ This document details the complete 16-phase development and audit history of the
 ---
 
 ## Phase 13 — Offline-First Resilience & SQLite Retry Queue
+
+* **Commit:** `88b73f1` (`feat: harden offline retry and failure recovery`)
 
 * **Objective:** Ensure zero data loss during intermittent UAV edge network disconnections.
 * **Main Changes:**
@@ -212,6 +240,8 @@ This document details the complete 16-phase development and audit history of the
 
 ## Phase 14 — Reproducibility Documentation & Verification Suite
 
+* **Commit:** `1d2be54` (`docs: add reproducible developer setup`)
+
 * **Objective:** Provide a master automated verification suite and rigorous documentation validation.
 * **Main Changes:**
   * Developed `scripts/verify_all.py` executing 10 comprehensive subsystem verification checks.
@@ -226,6 +256,8 @@ This document details the complete 16-phase development and audit history of the
 
 ## Phase 15 — Final Performance Benchmarking & Reporting
 
+* **Commit:** `fbfd930` (`benchmark: finalize system performance evaluation`)
+
 * **Objective:** Consolidate hardware profiling, latency benchmarks, and accuracy metrics into unified reports.
 * **Main Changes:**
   * Generated authoritative JSON reports: `results/edge_benchmark.json`, `blockchain_validation.json`, `ipfs_validation.json`, `notification_validation.json`, `resilience_validation.json`.
@@ -239,6 +271,8 @@ This document details the complete 16-phase development and audit history of the
 ---
 
 ## Phase 16 — Final Codebase Audit & GitHub Release Preparation
+
+* **Commit:** `96d0af2` (`docs: finalize project audit and viva preparation`)
 
 * **Objective:** Restructure package layout, add explicit `__init__.py` files, standardize module naming, eliminate dead scratch files, add open-source MIT License, and prepare for production GitHub release.
 * **Main Changes:**

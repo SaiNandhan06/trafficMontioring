@@ -1,0 +1,64 @@
+version: '3.8'
+
+services:
+  # 1. Local IPFS Node
+  ipfs_node:
+    image: ipfs/kubo:latest
+    container_name: uav_ipfs_node
+    ports:
+      - "4001:4001"
+      - "5001:5001"
+      - "8080:8080"
+    volumes:
+      - ipfs_data:/data/ipfs
+    environment:
+      - IPFS_PROFILE=server
+    restart: unless-stopped
+
+  # 2. Local EVM Blockchain Client (Ganache)
+  blockchain_node:
+    image: trufflesuite/ganache:latest
+    container_name: uav_ganache_node
+    ports:
+      - "8545:8545"
+    command: ["--wallet.deterministic", "--chain.chainId", "1337", "--server.host", "0.0.0.0"]
+    restart: unless-stopped
+
+  # 3. Verification Dashboard (Streamlit UI & FastAPI)
+  dashboard:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.dashboard
+    container_name: uav_dashboard
+    ports:
+      - "8501:8501"
+      - "8000:8000"
+    environment:
+      - ETH_RPC_URL=http://blockchain_node:8545
+      - IPFS_HOST=ipfs_node
+      - IPFS_PORT=5001
+      - IPFS_MODE=local
+    depends_on:
+      - blockchain_node
+      - ipfs_node
+    restart: unless-stopped
+
+  # 4. Edge AI Video Inference Engine
+  edge_node:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.edge
+    container_name: uav_edge_node
+    environment:
+      - ETH_RPC_URL=http://blockchain_node:8545
+      - IPFS_HOST=ipfs_node
+      - IPFS_PORT=5001
+      - IPFS_MODE=local
+      - STREAM_SOURCE=data/sample_drone_feed.mp4
+    depends_on:
+      - blockchain_node
+      - ipfs_node
+    restart: unless-stopped
+
+volumes:
+  ipfs_data:
