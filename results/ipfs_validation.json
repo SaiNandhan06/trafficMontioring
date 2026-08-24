@@ -1,0 +1,38 @@
+{
+  "timestamp": "2026-08-24T05:19:35Z",
+  "mode": "mock",
+  "backends": {
+    "mock": {
+      "status": "AVAILABLE & VERIFIED",
+      "storage_directory": "C:\\Users\\M Sainandhan\\OneDrive\\Documents\\Projects\\trafficMonitoring\\ipfs\\mock_store",
+      "deterministic_cids": true
+    },
+    "local_kubo": {
+      "available": false,
+      "status": "BLOCKED \u2014 Local Kubo daemon (port 5001) unavailable"
+    },
+    "pinata_cloud": {
+      "available": false,
+      "status": "BLOCKED \u2014 PINATA_JWT not configured in .env"
+    }
+  },
+  "performance": {
+    "raw_payload_bytes": 79,
+    "raw_upload_latency_ms": 2.373,
+    "raw_retrieval_latency_ms": 0.53,
+    "package_payload_bytes": 30310,
+    "package_upload_latency_ms": 1.64,
+    "package_retrieval_latency_ms": 0.227,
+    "measured_or_simulated": "measured (local mock store)"
+  },
+  "integrity_verification": {
+    "raw_bytes_integrity": true,
+    "evidence_image_decoded": true,
+    "metadata_json_valid": true,
+    "cid_stability_and_mutation": true,
+    "security_no_secrets_leaked": true,
+    "blockchain_cid_match": true,
+    "master_root_cid": "Qmc551f1ef723b8778f44e832682a1d1e1f33bb068c317",
+    "evidence_image_cid": "Qm284f5a35a53dd8878ee61ddde2fe8536a1b6b97214f3"
+  }
+}
