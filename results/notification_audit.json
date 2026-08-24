@@ -1,0 +1,23 @@
+[
+  {
+    "alert_id": "0x0000000000000000000000000000000000000000000000007e14eefc10696c07_1_QmValidCID001",
+    "incident_id": 1,
+    "severity": "CRITICAL",
+    "notification_mode": "mock",
+    "status": "SENT",
+    "attempts": 1,
+    "created_at": 1787548780.5119252,
+    "sent_at": 1787548780.5119252,
+    "error": null,
+    "payload": {
+      "incident_id": 1,
+      "severity": "CRITICAL",
+      "ipfs_cid": "QmValidCID001",
+      "message": "Replayed offline incident: COLLISION_ACCIDENT",
+      "timestamp": 1787548780.5119252,
+      "tx_hash": "0x0000000000000000000000000000000000000000000000007e14eefc10696c07",
+      "block_number": 1000,
+      "network": "simulated"
+    }
+  }
+]

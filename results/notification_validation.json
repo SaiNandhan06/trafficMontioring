@@ -1,0 +1,38 @@
+{
+  "timestamp": "2026-08-24T05:19:39Z",
+  "event_source": {
+    "source": "EmergencyNotificationService.sol",
+    "event_name": "EmergencyAlertDispatched",
+    "mode": "simulated",
+    "is_simulated": true
+  },
+  "notification_modes": {
+    "mock": {
+      "available": true,
+      "verified": true,
+      "label": "SIMULATED NOTIFICATION (MOCK_DELIVERED)"
+    },
+    "webhook": {
+      "available": true,
+      "verified": true,
+      "status": "CONFIGURABLE (Tested with bounded retry on offline endpoint)"
+    }
+  },
+  "performance": {
+    "events_received": 1,
+    "events_processed": 1,
+    "duplicates_suppressed": 1,
+    "notifications_sent": 1,
+    "notifications_failed": 1,
+    "event_dispatch_latency_ms": 0.006,
+    "event_processing_latency_ms": 0.886,
+    "measured_or_simulated": "measured (local mock & event loop)"
+  },
+  "test_audit": {
+    "first_incident_id": 101,
+    "first_severity": "CRITICAL",
+    "first_status": "SENT",
+    "duplicate_suppression_verified": true,
+    "bounded_retry_verified": true
+  }
+}
