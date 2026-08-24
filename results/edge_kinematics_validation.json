@@ -1,0 +1,18 @@
+{
+  "video_source": "data\\sample_drone_feed.mp4",
+  "total_video_frames": 100,
+  "processed_frames": 100,
+  "unique_tracks_identified": 9,
+  "total_incidents_triggered": 0,
+  "incident_types_breakdown": {},
+  "performance_profile": {
+    "overall_throughput_fps": 14.84,
+    "mean_total_frame_latency_ms": 64.72,
+    "stage_breakdown_ms": {
+      "yolov8_detection_mean_ms": 64.69,
+      "bytetrack_tracking_mean_ms": 0.02,
+      "incident_kinematics_mean_ms": 0.01
+    }
+  },
+  "incidents": []
+}
