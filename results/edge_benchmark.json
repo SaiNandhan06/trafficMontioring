@@ -1,0 +1,96 @@
+{
+  "timestamp": "2026-08-24T05:12:52Z",
+  "environment": {
+    "operating_system": "Windows 11 (10.0.26200)",
+    "python_version": "3.12.10",
+    "cpu": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+    "cpu_cores_physical": 12,
+    "cpu_cores_logical": 16,
+    "ram_gb": 15.69,
+    "gpu": "None (CPU only)",
+    "cuda_available": false,
+    "cuda_version": "N/A",
+    "cudnn_version": "N/A",
+    "pytorch_version": "2.13.0+cpu",
+    "ultralytics_version": "ultralytics.models.yolo.model",
+    "onnx_version": "1.22.0",
+    "onnxruntime_version": "1.29.0",
+    "onnxruntime_providers": [
+      "AzureExecutionProvider",
+      "CPUExecutionProvider"
+    ],
+    "tensorrt_version": "Not installed",
+    "jetson_hardware_connected": false
+  },
+  "onnx_graph_validation": {
+    "is_valid": true,
+    "file_size_mb": 11.7,
+    "ir_version": 9,
+    "opset_version": 20,
+    "inputs": [
+      {
+        "name": "images",
+        "shape": [
+          1,
+          3,
+          640,
+          640
+        ]
+      }
+    ],
+    "outputs": [
+      {
+        "name": "output0",
+        "shape": [
+          1,
+          8,
+          8400
+        ]
+      }
+    ],
+    "node_count": 231
+  },
+  "runtimes": {
+    "pytorch": {
+      "format": "PyTorch (.pt)",
+      "device": "CPU (Intel Core i5-12500H)",
+      "execution_provider": "PyTorch CPU Native",
+      "measured_or_estimated": "measured",
+      "num_runs": 50,
+      "mean_latency_ms": 71.0,
+      "p50_latency_ms": 67.43,
+      "p95_latency_ms": 99.45,
+      "p99_latency_ms": 126.3,
+      "fps": 14.09
+    },
+    "onnx_runtime": {
+      "format": "ONNX (.onnx)",
+      "device": "CPU (Intel Core i5-12500H)",
+      "execution_provider": "CPUExecutionProvider",
+      "measured_or_estimated": "measured",
+      "num_runs": 50,
+      "mean_latency_ms": 61.89,
+      "p50_latency_ms": 52.22,
+      "p95_latency_ms": 105.15,
+      "p99_latency_ms": 183.59,
+      "fps": 16.16
+    },
+    "tensorrt": {
+      "format": "TensorRT (.engine)",
+      "device": "NVIDIA GPU / Jetson",
+      "status": "BLOCKED \u2014 TensorRT and CUDA unavailable on Windows CPU host",
+      "measured_or_estimated": "not_measured"
+    },
+    "jetson_nano": {
+      "format": "Jetson Nano Physical",
+      "device": "NVIDIA Jetson Nano (Maxwell 128-core GPU)",
+      "status": "N/A \u2014 Physical Jetson hardware not connected",
+      "measured_or_estimated": "not_measured"
+    }
+  },
+  "consistency": {
+    "pytorch_detections": 0,
+    "onnx_detections": 0,
+    "predictions_equivalent": true
+  }
+}
