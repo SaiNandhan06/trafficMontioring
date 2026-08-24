@@ -1,0 +1,13 @@
+{
+  "run_name": "yolov8n_uav_traffic_phase4",
+  "base_weights": "yolov8n.pt",
+  "epochs_trained": 5,
+  "batch_size": 16,
+  "image_size": 640,
+  "device": "cpu",
+  "training_duration_seconds": 1049.65,
+  "completed_timestamp": "2026-08-23T15:17:44Z",
+  "best_checkpoint": "C:\\Users\\M Sainandhan\\OneDrive\\Documents\\Projects\\trafficMonitoring\\model\\runs\\yolov8n_uav_traffic_phase4\\weights\\best.pt",
+  "last_checkpoint": "C:\\Users\\M Sainandhan\\OneDrive\\Documents\\Projects\\trafficMonitoring\\model\\runs\\yolov8n_uav_traffic_phase4\\weights\\last.pt",
+  "results_csv": "C:\\Users\\M Sainandhan\\OneDrive\\Documents\\Projects\\trafficMonitoring\\model\\runs\\yolov8n_uav_traffic_phase4\\results.csv"
+}

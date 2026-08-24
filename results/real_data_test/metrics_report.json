@@ -1,0 +1,47 @@
+{
+  "timestamp": 1787338875.2375314,
+  "model_weights": "yolov8n.pt",
+  "total_images_tested": 50,
+  "total_detections": 215,
+  "class_distribution": {
+    "vehicle": 182,
+    "pedestrian": 32,
+    "cyclist": 0,
+    "traffic_signal": 1
+  },
+  "average_confidence_per_class": {
+    "vehicle": 0.5647481280368764,
+    "pedestrian": 0.5487271938472986,
+    "cyclist": 0.0,
+    "traffic_signal": 0.5357207655906677
+  },
+  "latency_metrics_ms": {
+    "mean": 111.24,
+    "p50": 62.13,
+    "p95": 92.61,
+    "p99": 1280.38
+  },
+  "throughput_fps": 8.99,
+  "saved_visualizations": [
+    "results\\real_data_test\\visualizations\\test_result_001_0000104_00360_d_0000057.jpg",
+    "results\\real_data_test\\visualizations\\test_result_002_9999951_00000_d_0000034.jpg",
+    "results\\real_data_test\\visualizations\\test_result_003_9999955_00000_d_0000359.jpg",
+    "results\\real_data_test\\visualizations\\test_result_004_9999990_00000_d_0000021.jpg",
+    "results\\real_data_test\\visualizations\\test_result_005_9999954_00000_d_0000134.jpg",
+    "results\\real_data_test\\visualizations\\test_result_006_0000276_05801_d_0000536.jpg",
+    "results\\real_data_test\\visualizations\\test_result_007_9999936_00000_d_0000089.jpg",
+    "results\\real_data_test\\visualizations\\test_result_008_9999985_00000_d_0000008.jpg",
+    "results\\real_data_test\\visualizations\\test_result_009_0000150_00630_d_0000070.jpg",
+    "results\\real_data_test\\visualizations\\test_result_010_9999938_00000_d_0000095.jpg",
+    "results\\real_data_test\\visualizations\\test_result_011_9999960_00000_d_0000164.jpg",
+    "results\\real_data_test\\visualizations\\test_result_012_0000342_03529_d_0000260.jpg",
+    "results\\real_data_test\\visualizations\\test_result_013_9999994_00000_d_0000025.jpg",
+    "results\\real_data_test\\visualizations\\test_result_014_9999942_00000_d_0000194.jpg",
+    "results\\real_data_test\\visualizations\\test_result_015_9999972_00000_d_0000101.jpg",
+    "results\\real_data_test\\visualizations\\test_result_016_0000257_00249_d_0000043.jpg",
+    "results\\real_data_test\\visualizations\\test_result_017_9999945_00000_d_0000049.jpg",
+    "results\\real_data_test\\visualizations\\test_result_018_9999964_00000_d_0000034.jpg",
+    "results\\real_data_test\\visualizations\\test_result_019_0000313_05801_d_0000465.jpg",
+    "results\\real_data_test\\visualizations\\test_result_020_9999954_00000_d_0000088.jpg"
+  ]
+}
