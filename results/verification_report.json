@@ -1,0 +1,71 @@
+{
+  "timestamp": 1787548762.1070402,
+  "summary": {
+    "total": 10,
+    "passed": 10,
+    "failed": 0,
+    "blocked": 0
+  },
+  "checks": [
+    {
+      "name": "Environment Variables",
+      "status": "PASS",
+      "detail": "Loaded .env (RPC: http://127.0.0.1:8545, Drone: UAV-ALPHA-01)",
+      "command": "from config.settings import settings"
+    },
+    {
+      "name": "Core Dependencies",
+      "status": "PASS",
+      "detail": "PyTorch 2.13.0+cpu | YOLOv8 8.4.126 | KaggleHub 1.0.2",
+      "command": "pip list"
+    },
+    {
+      "name": "Model File Available",
+      "status": "PASS",
+      "detail": "Found weights at: yolov8_uav_best.pt (5.9 MB)",
+      "command": ""
+    },
+    {
+      "name": "Model Load & Architecture",
+      "status": "PASS",
+      "detail": "Loaded DetectionModel (3,011,628 params)",
+      "command": ""
+    },
+    {
+      "name": "Kaggle Dataset Download",
+      "status": "PASS",
+      "detail": "Dataset accessible at: 1",
+      "command": ""
+    },
+    {
+      "name": "Single Image Inference",
+      "status": "PASS",
+      "detail": "Inference successful: 0.5 FPS (23 detections)",
+      "command": ""
+    },
+    {
+      "name": "Smart Contract Compilation",
+      "status": "PASS",
+      "detail": "Compiled 2 contracts (TrafficIncidentRegistry, EmergencyNotificationService)",
+      "command": ""
+    },
+    {
+      "name": "API Health Endpoint",
+      "status": "PASS",
+      "detail": "HTTP 200 - HEALTHY",
+      "command": ""
+    },
+    {
+      "name": "Security & HMAC Auth",
+      "status": "PASS",
+      "detail": "HMAC-SHA256 telemetry signing & verification verified",
+      "command": ""
+    },
+    {
+      "name": "End-to-End Pytest Suite",
+      "status": "PASS",
+      "detail": "8/8 test suites passed (Contracts, Edge, IPFS, Queue)",
+      "command": ""
+    }
+  ]
+}
